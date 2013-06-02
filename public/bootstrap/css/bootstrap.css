@@ -4622,12 +4622,12 @@ input[type="submit"].btn.btn-mini {
   margin-top: 8px;
 }
 
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
-  color: #333333;
-  text-decoration: none;
-  background-color: transparent;
-}
+    .navbar .nav > li > a:focus,
+    .navbar .nav > li > a:hover {
+      color: #333333;
+      text-decoration: none;
+      background-color: transparent;
+    }
 
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
