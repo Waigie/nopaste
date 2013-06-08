@@ -96,6 +96,7 @@ body {
 
 .container > .content > form > fieldset {
     margin: 0;
+    padding: 0;
 }
 
 .container > .content > form > fieldset > legend {
