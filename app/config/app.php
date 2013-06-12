@@ -113,7 +113,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+        'cweygand\Nopaste\Luminous\LuminousServiceProvider',
 	),
 
 	/*
@@ -178,6 +178,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+        'LuminousViewHelper' => 'cweygand\Nopaste\Luminous\LuminousViewHelper',
 
 	),
 
