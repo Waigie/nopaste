@@ -16,7 +16,8 @@
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-            "app/library/luminous"
+            "app/library/luminous",
+            "app/tests/TestCase.php"
 		]
 	},
 	"scripts": {
