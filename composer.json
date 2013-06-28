@@ -17,6 +17,7 @@
 			"app/database/migrations",
 			"app/database/seeds",
             "app/library/luminous",
+            "app/library/util",
             "app/tests/TestCase.php"
 		]
 	},

@@ -114,6 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'cweygand\Nopaste\Luminous\LuminousServiceProvider',
+        'cweygand\Nopaste\Util\RandomServiceProvider',
 	),
 
 	/*

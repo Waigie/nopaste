@@ -14,7 +14,7 @@ class HelperTest extends TestCase {
         $luminous_mock = \Mockery::mock('LuminousInterface');
         $luminous_mock->shouldReceive('scanners')->andReturn(array());
 
-        App::instance('Luminous', $luminous_mock);
+        App::instance('luminous', $luminous_mock);
 
         $this->assertEquals(\cweygand\Nopaste\Luminous\LuminousViewHelper::options(), array());
 
@@ -29,7 +29,7 @@ class HelperTest extends TestCase {
             'C#' => array('cs', 'csharp')
         ));
 
-        App::instance('Luminous', $luminous_mock);
+        App::instance('luminous', $luminous_mock);
 
         $this->assertEquals(\cweygand\Nopaste\Luminous\LuminousViewHelper::options(), array(
             'c' => 'C++',

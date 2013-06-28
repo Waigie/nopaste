@@ -25,6 +25,7 @@ class PastesAddHashColumn extends Migration {
 	public function down()
 	{
 		$Schema::table('paste', function($table) {
+            $table->dropUnique('paste');
             $table->dropColumn('paste');
         });
 	}

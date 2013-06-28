@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\App;
 class LuminousViewHelper {
 
     public static function options() {
-        $luminous = App::make('Luminous');
+        $luminous = App::make('luminous');
 
         $languages = $luminous->scanners();
         array_walk(

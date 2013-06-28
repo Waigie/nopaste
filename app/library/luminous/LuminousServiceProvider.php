@@ -18,7 +18,7 @@ class LuminousServiceProvider extends ServiceProvider {
     {
         $app = $this->app;
 
-        $app['Luminous'] = function() {
+        $app['luminous'] = function() {
             return new LuminousImpl();
         };
 
