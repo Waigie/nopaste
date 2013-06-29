@@ -11,4 +11,12 @@
 |
 */
 
-Route::get('/', 'PasteController@newPaste');
+
+
+Route::get('/', function() {
+    return View::make('newpaste');
+});
+
+Route::post('/', 'PasteController@newPaste');
+
+Route::get('/show/{hash}', 'PasteController@show');

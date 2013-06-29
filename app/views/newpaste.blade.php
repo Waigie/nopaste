@@ -2,31 +2,36 @@
 
 
 @section('content')
-<form class="form-horizontal">
+{{ Form::open(array('method' => 'post', 'action' =>'PasteController@newPaste', 'class' => 'form-horizontal'))}}
     <fieldset>
         <legend><em>New</em> paste</legend>
-        <textarea placeholder="paste"></textarea>
+        @foreach($errors->getMessages() as $error)
+        <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>ERROR</strong> {{ $error[0] }}
+        </div>
+        @endforeach
+        {{ Form::textarea('paste', Input::old('paste'), array('placeholder' => 'paste')) }}
     </fieldset>
     <fieldset>
-        <legend><em>Optional</em> Settings</legend>
+        <legend><em>Optional</em> settings</legend>
         <div class="control-group">
-            <label class="control-label" for="title">Title</label>
+            {{ Form::label('title', 'Title', array('class' => 'control-label')) }}
             <div class="controls">
-                <input type="text" id="title" placeholder="title">
+                {{ Form::text('title', Input::old('title') , array('placeholder' => 'title')) }}
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="language">Language</label>
-
+            {{ Form::label('language', 'Language', array('class' => 'control-label')) }}
             <div class="controls">
-                <select id="language"></select>
+                {{ Form::select('language', LuminousViewHelper::options(), Input::old('language', 'plain')) }}
             </div>
         </div>
         <div class="control-group">
             <div class="controls">
-                <input type="submit" value="submit" class="btn-large btn-primary">
+                {{ Form::submit('submit', array('class'=>'btn-large btn-primary'))}}
             </div>
         </div>
     </fieldset>
-</form>
+{{ Form::close() }}
 @stop

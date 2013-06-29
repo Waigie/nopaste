@@ -4,13 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="/nopaste/css/nopaste.css" rel="stylesheet" media="screen">
+    {{ LuminousViewHelper::headHtml() }}
     <title>Nopaste.waigie.de</title>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#"><em>No</em>Paste</a>
+            <a class="brand" href="/"><em>No</em>Paste</a>
+            <!--
             <ul class="nav pull-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
@@ -19,6 +21,7 @@
                     </ul>
                 </li>
             </ul>
+            -->
         </div>
     </div>
 </div>
