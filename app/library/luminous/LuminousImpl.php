@@ -13,12 +13,18 @@ use \luminous;
 
 class LuminousImpl implements LuminousInterface {
 
-    function hightlight($scanner, $source, $settings = null)
+    public function hightlight($scanner, $source, $settings = null)
     {
-        // TODO: Implement hightlight() method.
+        return luminous::highlight($scanner, $source);
     }
 
-    function scanners()
+    public function headHtml() {
+        luminous::set('relative-root', '/luminous/');
+        luminous::set('theme', 'github');
+        return luminous::head_html();
+    }
+
+    public function scanners()
     {
         return luminous::scanners();
     }

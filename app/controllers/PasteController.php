@@ -26,8 +26,18 @@ class PasteController extends BaseController {
 			return Redirect::to('/')->withErrors($validator)->withInput();
 		} else {
             $paste = Paste::create(Input::all());
+            Session::set('newPaste', true);
             return Redirect::action('PasteController@show', array($paste->hash));
         }
 	}
+
+    public function show($hash) {
+        $newPaste = Session::get('newPaste', false);
+        #Session::forget('newPaste');
+        $paste = Paste::where('hash', '=', $hash)->firstOrFail();
+        $paste->last_viewed = new DateTime();
+        $paste->save();
+        return View::make('showpaste', array('paste'=>$paste, 'new'=>$newPaste));
+    }
 
 }

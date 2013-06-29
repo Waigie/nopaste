@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\App;
 
 class LuminousViewHelper {
 
+    public static function languageFromCode($languageCode) {
+        $luminous = App::make('luminous');
+
+        $languages = $luminous->scanners();
+
+        foreach($languages as $language => $codes) {
+            if(in_array($languageCode, $codes)) {
+                return $language;
+            }
+        }
+
+        return '';
+    }
+
     public static function options() {
         $luminous = App::make('luminous');
 
@@ -25,6 +39,18 @@ class LuminousViewHelper {
         );
 
         return array_flip($languages);
+    }
+
+    public static function highlight($languageCode, $text) {
+        $luminous = App::make('luminous');
+
+        return $luminous->hightlight($languageCode, $text);
+    }
+
+    public static function headHtml() {
+        $luminous = App::make('luminous');
+
+        return $luminous->headHtml();
     }
 
 }

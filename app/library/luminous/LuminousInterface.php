@@ -11,6 +11,7 @@ namespace cweygand\Nopaste\Luminous;
 
 interface LuminousInterface {
 
+    function headHtml();
     function hightlight($scanner, $source, $settings = null);
     function scanners();
 

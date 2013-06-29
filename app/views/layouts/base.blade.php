@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="/nopaste/css/nopaste.css" rel="stylesheet" media="screen">
+    {{ LuminousViewHelper::headHtml() }}
     <title>Nopaste.waigie.de</title>
 </head>
 <body>

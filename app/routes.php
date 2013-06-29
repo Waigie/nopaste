@@ -18,3 +18,5 @@ Route::get('/', function() {
 });
 
 Route::post('/', 'PasteController@newPaste');
+
+Route::get('/show/{hash}', 'PasteController@show');
