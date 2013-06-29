@@ -10,18 +10,14 @@
 namespace cweygand\Nopaste\Util;
 
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider,
+    Illuminate\Support\Facades\App;
 
 class RandomServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        $app = $this->app;
-
-        $app['random'] = function() {
-            return new RandomImpl();
-        };
-
+        App::bind('RandomInterface', 'RandomImpl');
     }
 
 }
