@@ -6,12 +6,16 @@
  * Time: 00:33
  */
 
-use cweygand\Nopaste\Paste;
+use cweygand\Nopaste\Paste,
+    cweygand\Nopaste\Shortener\ShortenerInterface;
 
 class PasteController extends BaseController {
 
-	public function __contruct() {
+    protected $shortener;
+
+	public function __construct(ShortenerInterface $shortener) {
 		$this->beforeFilter('csrf', array('on' => 'post'));
+        $this->shortener = $shortener;
 	}
 
 	public function newPaste() {
@@ -38,6 +42,11 @@ class PasteController extends BaseController {
         $paste->last_viewed = new DateTime();
         $paste->save();
         return View::make('showpaste', array('paste'=>$paste, 'new'=>$newPaste));
+    }
+
+    public function shorten() {
+        $shortend = $this->shortener->getShortUri(Input::get('url'));
+        return $shortend;
     }
 
 }
