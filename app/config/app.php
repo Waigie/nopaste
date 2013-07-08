@@ -115,6 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'cweygand\Nopaste\Luminous\LuminousServiceProvider',
         'cweygand\Nopaste\Util\RandomServiceProvider',
+        'cweygand\Nopaste\Shortener\ShortenerServiceProvider',
 	),
 
 	/*

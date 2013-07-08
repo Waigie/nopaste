@@ -150,6 +150,16 @@ body {
     padding: 10px;
 }
 
+.btn {
+    color: #202020;
+    text-shadow: none;
+    background-color: #DDD;
+    background-image: none;
+    background-repeat: repeat-x;
+    border: 1px solid #DDD;
+    filter: none;
+}
+
 .btn-primary {
     color: #202020;
     text-shadow: none;

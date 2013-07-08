@@ -9,10 +9,9 @@
             <label class="control-label" for="url">Link</label>
             <div class="controls">
                 <div class="input-append">
-                    {{ Form::text('url', Request::url(), array('placeholder' => 'title', 'class' => 'span6', 'disabled'=>'true')) }}
+                    {{ Form::text('url', Request::url(), array('placeholder' => 'title', 'id' => 'url', 'class' => 'span5', 'disabled'=>'true')) }}
+                    {{ Form::button('Shorten link', array('class' => 'btn', 'id' => 'shorten')) }}
                     {{ Form::button('Copy to clipboard', array('class' => 'btn btn-primary', 'id' => 'copy', 'data-clipboard-text' => Request::url() )) }}
-                    <script src="/ZeroClipboard/ZeroClipboard.min.js"></script>
-                    <script src="/ZeroClipboard/main.js"></script>
                 </div>
             </div>
         </div>
@@ -27,4 +26,10 @@
     @endif
 </h1>
 {{ LuminousViewHelper::highlight($paste->language, $paste->paste) }}
+@stop
+
+@section('js')
+<script src="/ZeroClipboard/ZeroClipboard.min.js"></script>
+<script src="/ZeroClipboard/main.js"></script>
+<script src="/nopaste/js/shorten.js"></script>
 @stop

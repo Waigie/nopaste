@@ -15,7 +15,7 @@ class ShortenerServiceProvider extends ServiceProvider {
 
     public function register()
     {
-
+        $this->app->bind('cweygand\Nopaste\Shortener\ShortenerInterface', 'cweygand\Nopaste\Shortener\UhcxShortenerImpl');
     }
 
 }
