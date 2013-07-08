@@ -10,18 +10,13 @@
 namespace cweygand\Nopaste\Luminous;
 
 use Illuminate\Support\ServiceProvider,
-    cweygand\Nopaste\Luminous\LuminousImpl;
+    Illuminate\Support\Facades\App;
 
 class LuminousServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        $app = $this->app;
-
-        $app['luminous'] = function() {
-            return new LuminousImpl();
-        };
-
+        App::bind('LuminousInterface', 'cweygand\Nopaste\Luminous\LuminousImpl');
     }
 
 }

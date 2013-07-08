@@ -6,11 +6,9 @@
  * Time: 00:33
  */
 
-use cweygand\Nopaste\Paste;
-
 class PasteController extends BaseController {
 
-	public function __contruct() {
+	public function __construct() {
 		$this->beforeFilter('csrf', array('on' => 'post'));
 	}
 
@@ -25,8 +23,12 @@ class PasteController extends BaseController {
 		if($validator->fails()) {
 			return Redirect::to('/')->withErrors($validator)->withInput();
 		} else {
-            $paste = Paste::create(Input::all());
-            Session::set('newPaste', true);
+            $paste = App::make('Paste');
+            $paste->language = Input::get('language');
+            $paste->title = Input::get('title');
+            $paste->paste = Input::get('paste');
+            $paste->save();
+            Session::flash('newPaste', true);
             return Redirect::action('PasteController@show', array($paste->hash));
         }
 	}

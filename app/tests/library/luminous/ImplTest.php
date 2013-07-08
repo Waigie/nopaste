@@ -10,7 +10,7 @@
 class ImplTest extends TestCase {
 
     public function testOutput() {
-        $luminous = App::make('luminous');
+        $luminous = App::make('LuminousInterface');
 
         $this->assertEquals($luminous->scanners(),luminous::scanners());
     }

@@ -10,13 +10,13 @@
 class RandomTest extends TestCase {
 
     public function testIsString() {
-        $random = App::make('random');
+        $random = App::make('cweygand\Nopaste\Util\RandomInterface');
 
         $this->assertTrue(is_string($random->randomString(7)));
     }
 
     public function testLength() {
-        $random = App::make('random');
+        $random = App::make('cweygand\Nopaste\Util\RandomInterface');
 
         $this->assertEquals(strlen($random->randomString(5)), 5);
         $this->assertEquals(strlen($random->randomString(7)), 7);
@@ -26,7 +26,7 @@ class RandomTest extends TestCase {
     }
 
     public function testContainedChars() {
-        $random = App::make('random');
+        $random = App::make('cweygand\Nopaste\Util\RandomInterface');
 
         $this->assertEquals(preg_match('/^\w+$/i', $random->randomString(50000)), 1);
     }

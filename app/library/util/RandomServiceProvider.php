@@ -17,7 +17,7 @@ class RandomServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        App::bind('RandomInterface', 'RandomImpl');
+        $this->app->bind('cweygand\Nopaste\Util\RandomInterface', 'cweygand\Nopaste\Util\RandomImpl');
     }
 
 }

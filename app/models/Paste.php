@@ -7,21 +7,13 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace cweygand\Nopaste;
-
-use cweygand\Nopaste\Util\RandomInterface;
-use Eloquent,
-    Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\App,
+    cweygand\Nopaste\Util\RandomInterface;
 
 class Paste extends Eloquent {
 
-    protected $random;
     protected $table = "paste";
     protected $fillable = array('title', 'language', 'paste');
-
-    public function _construct(RandomInterface $random) {
-        $this->random = $random;
-    }
 
     public function save(array $options= array()) {
         if(empty($this->hash)) {
@@ -32,7 +24,8 @@ class Paste extends Eloquent {
     }
 
     private function generateUniqueHash() {
-        $hash = $this->random->randomString(7);
+        $random = App::make('RandomInterface');
+        $hash = $random->randomString(7);
 
         while(self::where('hash', '=', $hash)->count() > 0) {
             $hash = $random->randomString(7);
