@@ -30,7 +30,7 @@ class PasteController extends BaseController {
 			return Redirect::to('/')->withErrors($validator)->withInput();
 		} else {
             $paste = Paste::create(Input::all());
-            Session::set('newPaste', true);
+            Session::flash('newPaste', true);
             return Redirect::action('PasteController@show', array($paste->hash));
         }
 	}
