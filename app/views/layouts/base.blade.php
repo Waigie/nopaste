@@ -5,7 +5,7 @@
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="/nopaste/css/nopaste.css" rel="stylesheet" media="screen">
     {{ LuminousViewHelper::headHtml() }}
-    <title>Nopaste.waigie.de</title>
+    <title>{{ Config::get('app.title', 'nopaste') }}</title>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
