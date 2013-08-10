@@ -63,6 +63,7 @@
         transition-property: background-color;
         transition-duration: 0.5s;
         transition-timing-function: ease-in;
+        white-space: pre;
         -webkit-transition-property: background-color;
         -webkit-transition-duration: 0.5s;
         -webkit-transition-timing-function: ease-in;
